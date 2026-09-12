@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'"><title>浙大·AI思政课一点通</title><link rel="icon" href="./logo.png"><link rel="stylesheet" href="./styles.css"><script src="./app.js" defer></script>
+</head>
+<body>
+<div class="app-layout">
+<aside class="sidebar" id="sidebar" aria-label="会话侧栏">
+<a class="brand" href="./"><img src="./logo.png" width="31" height="31" alt=""><strong>浙大·AI思政课一点通</strong></a>
+<button id="new-button" class="new-conversation" type="button"><span aria-hidden="true">⊞</span> 新建对话</button>
+<div class="history-heading">对话历史 <span title="预览仅显示你主动查看的示例。" aria-label="预览示例记录">ⓘ</span></div>
+<div id="history-list" class="history-list"></div>
+<div class="sidebar-bottom"><button id="preview-button" type="button">一点通数字人</button></div>
+</aside>
+<button class="sidebar-scrim" id="sidebar-scrim" type="button" aria-label="收起侧栏" hidden></button>
+<main class="main-column">
+<header class="toolbar"><button id="menu-button" class="icon-button" type="button" aria-label="打开会话侧栏">☰</button><div class="preview-state"><span>体验预览</span><button id="example-button" type="button">查看示例</button></div><div class="toolbar-options"><label class="toggle-control" title="记忆功能将在完整服务中提供。"><input id="memory-toggle" type="checkbox" checked disabled><span class="switch"></span><span>记忆</span></label><label class="toggle-control speech-control" title="语音播放暂不可用"><input id="speech-toggle" type="checkbox" disabled><span class="switch"></span><span>自动播报</span></label></div></header>
+<div id="messages" class="messages" aria-label="聊天记录" aria-busy="false"></div>
+
+<div class="composer-area"><div class="composer-row"><button id="clear-button" type="button" class="clear-button" aria-label="清除当前会话" title="只清除此条会话的消息">♧</button><form id="chat-form" class="composer"><label class="sr-only" for="message-input">向一点通提问</label><textarea id="message-input" rows="1" maxlength="4000" placeholder="请输入你的问题" aria-describedby="input-hint"></textarea><div class="composer-tools"><button type="button" class="icon-button" id="file-button" disabled aria-disabled="true" aria-label="文件上传暂不可用" title="文件上传将在完整服务中提供">▧</button><button type="button" class="icon-button" id="voice-button" disabled aria-disabled="true" aria-label="语音输入暂不可用" title="语音输入暂不可用">♩</button><span class="input-divider"></span><button id="send-button" type="submit" aria-label="发送问题" title="Enter 发送，Shift + Enter 换行">➤</button><button id="stop-button" type="button" aria-label="停止回答" hidden>■</button></div></form></div><div class="composer-note"><span id="input-hint">Enter 发送 · Shift + Enter 换行</span></div></div>
+</main>
+</div>
+<dialog id="dialog" aria-labelledby="dialog-title"><div class="dialog-head"><h2 id="dialog-title"></h2><button type="button" id="dialog-close" class="icon-button" aria-label="关闭弹窗">×</button></div><div id="dialog-body"></div></dialog>
+<div id="notice" role="status" hidden></div>
+</body>
+</html>
+
